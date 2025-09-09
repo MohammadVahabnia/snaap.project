@@ -1,0 +1,73 @@
+@import url('./vazir.fonts.css');
+html{
+    font-size: 15px;
+    font-family: Vazirmatn;
+}
+
+body{
+    background-color: red;
+}
+
+/* Base container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;   /* gutter spacing */
+  padding-right: 1rem;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+.navbar{
+    background-color: white;
+    display: flex;
+    height: 5.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .2) ;
+}
+
+.navbar__section{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+.navbar__links{
+    display: flex;
+}
+
+.navbar__links li{
+    margin-right: 2.2rem;
+    font-weight: 200;
+
+}
