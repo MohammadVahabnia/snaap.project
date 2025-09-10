@@ -44,13 +44,13 @@ button{
     max-width: 1140px;
   }
 }
-
+/*
 @media (min-width: 1400px) {
   .container {
     max-width: 1440px;
   }
 }
-
+ */
 @media (min-width: 1600px) {
   .container {
     max-width: 1640px;
@@ -171,7 +171,6 @@ button{
     background-size: cover;
     transform: scaleX(-1);
     flex: 0 0 50%;
-
 }
 
 .hero-section__intro_gotowebapp{
@@ -187,4 +186,20 @@ button{
 
 .hero-section__intro_gotowebapp:hover{
     background-color: rgba(225, 225, 225, 0.1);
+}
+
+
+
+/*
+* Snapp App Links
+*/
+
+.snapp-apps-links{
+    min-height: 30vh;
+    content-visibility: auto;
+    display: flex;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2rem;
 }
