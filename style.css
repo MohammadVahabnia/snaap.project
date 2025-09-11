@@ -1,4 +1,14 @@
 @import url('./vazir.fonts.css');
+
+:root{
+    --text-xs : 0.725rem;
+    --text-sm : 0.875rem;
+    --text-md : 1.125rem;
+    --text-lg : 1.25rem ;
+    --text-xl : 1.375rem;
+    --text-2xl : 2.25rem;
+}
+
 html{
     font-size: 100%;
     font-family: Vazirmatn;
@@ -17,8 +27,8 @@ button{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12%;   /* gutter spacing */
-  padding-right: 12%;
+  /* padding-left: 12%;
+  padding-right: 12%; */
 }
 
 /* Responsive breakpoints */
@@ -102,14 +112,14 @@ button{
 }
 
 .hero-section__intro_tagline{
-    font-size: 2.25rem;
+    font-size: var(--text-2xl);
     font-weight: 700;
     line-height: 3.25rem;
     margin-bottom: 1rem;
 }
 
 .hero-section__intro_description{
-    font-size: 1.25rem;
+    font-size: var(--text-lg);
     font-weight: 300;
     line-height: 1.7rem;
     margin-bottom: 1rem;
@@ -178,7 +188,7 @@ button{
     border: 1px solid white;
     background-color: transparent;
     color: white;
-    font-size: 1.125rem;
+    font-size: var(--text-md);
     cursor: pointer;
     border-radius: 0.325rem ;
     height: 3rem;
@@ -231,7 +241,7 @@ button{
 
 .intro-of-snapp-apps_title{
     padding: 2.5rem 0;
-    font-size: 2.25rem;
+    font-size: var(--text-2xl);
     font-weight: 700;
     line-height: 3.25rem;
     text-align: center;
@@ -256,7 +266,7 @@ button{
 }
 
 .intro-of-snapp-apps_item_info p{
-    font-size: 0.875rem ;
+    font-size: var(--text-sm) ;
     color: rgba(0,0,0,0.6);
 }
 
@@ -267,11 +277,13 @@ button{
 
 .snapp_for_all_need{
     display: flex;
+    position:relative;
+    min-height: 630px;
 }
 
 .snapp_for_all_need__pic{
     background-image:url(/statics/img/super-app.jpg);
-    min-height: 50vh;
+    height: 50vh;
     width:50%;
     background-position: center center;
     background-size: cover;
@@ -286,35 +298,31 @@ button{
 }
 
 .snapp_for_all_need__intro h2{
-    font-size: 1.375rem;
+    font-size: var(--text-xl);
     margin: 1rem 0 ;
     font-weight: bold;
 }
 
 .snapp_for_all_need__intro p{
     margin: 0.5rem 0;
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     color: #252A3C;
     font-weight: 300;
     line-height: 1.7;
 }
 
-.biobala{
-    display: flex;
+.snapp-benefits{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
-
-.bio-bala__content img{
-    background-color: #EBECF2;
-}
-
-
-
 
 .snapp-benefits__items{
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
-    gap: 4rem;
-    padding: 0 15%;
+    gap: 8rem;
+    padding: 0 12%;
 }
 
 .snapp-benefits__item_cover{
@@ -323,4 +331,14 @@ button{
     align-items: center;
     justify-content: center;
     border-radius: 1.125rem;
+}
+
+.snapp-benefits__item_title{
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.snapp-benefits__item_discription{
+    font-weight: 300;
+    font-size: var(--text-xs);
 }
