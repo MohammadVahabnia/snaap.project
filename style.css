@@ -501,3 +501,46 @@ button{
 .benefits_item_info p{
     font-size: var(--text-sm);
 }
+
+
+
+/*
+* Footer
+*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.footer .footer-links{
+    display: flex;
+}
+
+.footer .footer-links li a{
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+    margin: 0 0.5rem;
+}
+
+.footer .footer-links li a:hover{
+    color: #00d170;
+    font-weight: 500;
+}
+
+.footer-socials{
+    margin-top: 2rem;
+}
+
+.footer-socials a{
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer-etemad{
+    margin: 1.5rem;
+}
