@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>snapp</title>
+    <link rel="stylesheet" href="/statics/css/keen-slider.min.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -191,6 +192,43 @@
         </div>
     </div>
 
+    <div class="snapp-slider-section">
+        <div class="container">
+            <div class="snapp-slider-wrapper">
+                <div id="snapp-slider" class="keen-slider">
+                    <div class="keen-slider__slide">
+                        <a href="">
+                            <img src="/statics/img/Market.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="keen-slider__slide">
+                        <a href="">
+                            <img src="/statics/img/Food.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="keen-slider__slide">
+                        <a href="">
+                            <img src="/statics/img/Driver.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="keen-slider__slide">
+                        <a href="">
+                            <img src="/statics/img/Market.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="keen-dots-wrapper">
+                    <div class="keen_dots">
+                        <button type="button" class="dot active"></button>
+                        <button type="button" class="dot "></button>
+                        <button type="button" class="dot "></button>
+                        <button type="button" class="dot "></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="snapp_for_all_need">
         <div class="snapp_for_all_need__pic"></div>
         <div class="snapp_for_all_need__intro">
@@ -369,6 +407,35 @@
 
     </div>
 
-</body>
+        <script src="/statics/js/keen-slider.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function (){
+                var slider = new KeenSlider("#snapp-slider", {
+                    loop: true,
+                    created: function (instance) {
+                        var dots = document.querySelectorAll(".keen_dots .dot");
+                        dots.forEach(function (dot, idx) {
+                            dot.addEventListener("click", function (){
+                                instance.moveToIdx(idx)
+                            });
+                        });
 
+                        updateActiveDot(instance);
+                    },
+                    slideChanged: function (instance) {
+                        updateActiveDot(instance);
+                    }
+                });
+                function updateActiveDot(instance){
+                    var dots = document.querySelectorAll(".keen_dots .dot");
+                    dots.forEach(function (dot, idx) {
+                        dot.classList.remove("active");
+                        if (idx === instance.track.details.rel){
+                            dot.classList.add("active");
+                        }
+                    });
+                }
+            });
+        </script>
+</body>
 </html>
