@@ -3,10 +3,12 @@
 :root{
     --text-xs : 0.725rem;
     --text-sm : 0.875rem;
+    --text-base: 1rem  ;
     --text-md : 1.125rem;
     --text-lg : 1.25rem ;
     --text-xl : 1.375rem;
-    --text-2xl : 2.25rem;
+    --text-2xl: 1.5rem  ;
+    --text-3xl: 2.25rem ;
 }
 
 html{
@@ -99,12 +101,29 @@ button{
 
 .navbar__section{
     display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
     align-items: center;
     height: 100%;
 }
 
+.ti-menu-sectuion{
+    padding: 0.5rem;
+}
+
+.ti-menu-sectuion:hover{
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 0.5rem;
+}
+
+
+.ti-menu{
+    font-size: 1.3rem;
+    color: #21aa58;
+}
+
 .navbar__links{
-    display: flex;
+    display: none;
 }
 
 .navbar__links .navbar__links_has_dropdown{
@@ -171,7 +190,17 @@ button{
     color: #333;
 }
 
-
+@media (min-width:992px){
+    .navbar__links{
+        display: flex;
+    }
+    .navbar__section {
+        justify-content: flex-start;
+    }
+    .ti-menu{
+        display: none;
+    }
+}
 
 /*
 * Hero Section
@@ -185,9 +214,8 @@ button{
 .hero-section__intro{
     background-color: #21aa58;
     color: white;
-    width: 50%;
-    padding: 2rem;
-    padding-right: 15%;
+    width: 100%;
+    padding: 1rem 1rem 1.5rem;
 }
 
 .hero-section__intro_tagline{
@@ -198,17 +226,17 @@ button{
 }
 
 .hero-section__intro_description{
-    font-size: var(--text-lg);
+    font-size: var(--text-lg) !important;
     font-weight: 300;
     line-height: 1.7rem;
     margin-bottom: 1rem;
 }
 
 .hero-section__intro_sendlink{
-    display: flex;
     align-items: center;
     height: 3.5rem;
     margin-bottom: 1rem;
+    display: none;
 }
 
 .hero-section__intro_sendlink > button{
@@ -261,6 +289,7 @@ button{
     background-size: cover;
     transform: scaleX(-1);
     flex: 0 0 50%;
+    display: none;
 }
 
 .hero-section__intro_gotowebapp{
@@ -272,28 +301,84 @@ button{
     border-radius: 0.325rem ;
     height: 3rem;
     padding: 0 1.5rem;
+    display: none;
 }
 
 .hero-section__intro_gotowebapp:hover{
     background-color: rgba(225, 225, 225, 0.1);
 }
 
+.hero-section__downloadapp{
+    border: none;
+    width: 100%;
+    background-color: white;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0.325rem ;
+    height: 3rem;
+    padding: 0 1.5rem;
+    margin-top: 1rem;
+}
 
+@media (min-width: 992px) {
+    .hero-section__pic{
+        display: block;
+    }
+    .hero-section__intro{
+        width: 50%;
+        padding: 2rem;
+        padding-right:15%;
+    }
+    .section__intro_tagline{
+        font-size: var(--text-3xl);
+    }
+    .hero-section__intro_description{
+        font-size: var(--text-base);
+    }
+    .hero-section__intro_sendlink{
+        display: flex;
+    }
+    .hero-section__intro_gotowebapp{
+        display: block;
+    }
+    .hero-section__downloadapp{
+        display: none;
+    }
+}
 
 /*
 * Snapp App Links
 */
 
+
 .snapp-apps-links{
     min-height: 30vh;
     content-visibility: auto;
-    display: flex;
-    grid-template-columns: auto auto auto auto;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 2rem;
+    padding: 0 rem;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    margin: 0.5rem 0;
+    justify-items: center
 }
 
+
+@media (min-width: 992px) {
+    .snapp-apps-links{
+        min-height: 30vh;
+        content-visibility: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 2rem;
+        max-width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}
 
 
 /*
@@ -309,8 +394,9 @@ button{
 .intro-of-snapp-apps_items{
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
-    gap: 2rem;
-    padding: 2rem 7rem;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    justify-content: center;
 }
 
 .intro-of-snapp-apps_items > a{
@@ -320,7 +406,7 @@ button{
 
 .intro-of-snapp-apps_title{
     padding: 2.5rem 0;
-    font-size: var(--text-2xl);
+    font-size: var(--text-lg);
     font-weight: 700;
     line-height: 3.25rem;
     text-align: center;
@@ -332,6 +418,8 @@ button{
     display: flex;
     align-items: center;
     padding: 0.5rem;
+    flex-direction: column;
+
 }
 
 .intro-of-snapp-apps_item_info{
@@ -342,11 +430,43 @@ button{
 .intro-of-snapp-apps_item_info h3{
     margin-bottom: 0.5rem;
     font-weight: bold;
+    text-align: center;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+
 }
 
 .intro-of-snapp-apps_item_info p{
     font-size: var(--text-sm) ;
     color: rgba(0,0,0,0.6);
+    display: none;
+
+}
+
+@media (min-width: 992px) {
+    .intro-of-snapp-apps_title{
+        font-size: var(--text-3xl);
+    }
+
+    .intro-of-snapp-apps_items{
+        grid-template-columns: repeat(3 , 1fr );
+        gap: 2rem;
+        /* padding: 2rem 7rem; */
+    }
+
+    .intro-of-snapp-apps_item{
+        flex-direction: row;
+    }
+
+    .intro-of-snapp-apps_item_info h3{
+        text-align: start;
+        font-size: var(--text-lg);
+        line-height: 1.5rem;
+    }
+
+    .intro-of-snapp-apps_item_info p{
+        display: block;
+    }
 }
 
 
@@ -355,7 +475,6 @@ button{
 */
 
 .snapp_for_all_need{
-    display: flex;
     position:relative;
     min-height: 630px;
     margin-bottom: 3rem;
@@ -363,24 +482,24 @@ button{
 
 .snapp_for_all_need__pic{
     background-image:url(/statics/img/super-app.jpg);
-    height: 50vh;
-    width:50%;
+    height: 30vh;
+    width:100%;
     background-position: center center;
     background-size: cover;
     flex: 0 0 50%;
 }
 
 .snapp_for_all_need__intro{
-    width: 50%;
-    padding: 2rem;
-    padding-left: 15%;
+    width: 100%;
     color: #333;
+    padding: 1rem 0;
 }
 
 .snapp_for_all_need__intro h2{
     font-size: var(--text-xl);
     margin: 1rem 0 ;
     font-weight: bold;
+    padding: 0 2rem;
 }
 
 .snapp_for_all_need__intro p{
@@ -389,20 +508,15 @@ button{
     color: #252A3C;
     font-weight: 300;
     line-height: 1.7;
-}
-
-.snapp-benefits{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    padding: 0 2rem;
 }
 
 .snapp-benefits__items{
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    gap: 8rem;
-    padding: 0 12%;
+    grid-template-columns: repeat(1 , 1fr);
+    gap: 2rem;
+    gap: 1rem;
+    padding: 0 0.5rem;
 }
 
 .snapp-benefits__item_cover{
@@ -423,6 +537,41 @@ button{
     font-size: var(--text-sm);
 }
 
+@media (min-width: 992px) {
+    .snapp_for_all_need{
+        display: flex;
+        position:relative;
+        min-height: 630px;
+        margin-bottom: 3rem;
+    }
+
+    .snapp_for_all_need__intro{
+        width: 100%;
+        padding: 2rem;
+        padding-left: 15%;
+        color: #333;
+    }
+
+    .snapp_for_all_need__pic{
+        width: 50%;
+        height: 50vh;
+
+    }
+
+    .snapp-benefits{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .snapp-benefits__items{
+        grid-template-columns: repeat(3 , 1fr);
+        gap: 4rem;
+        padding: 0 12%;
+    }
+
+}
 
 /*
 * Driver Registration
@@ -430,13 +579,14 @@ button{
 
 .driver-registration{
     background-color: #e9f7ee;
-    padding: 4rem;
+    padding: 1rem;
 }
 
 .driver-registration__title{
     font-size: var(--text-2xl);
     font-weight: bold;
     text-align: center;
+    line-height: 1.5;
 }
 
 .driver-registration__description{
@@ -480,9 +630,9 @@ button{
 
 .driver-registration__benefits{
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(1 , 1fr);
     gap: 2rem;
-    margin: 2.5rem;
+    margin: 2rem 0;
 }
 
 .driver-registration__benefits_item{
@@ -490,19 +640,59 @@ button{
     border-radius: 1rem;
     padding: 2.5rem 1.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .benefits_item_info h4{
     font-weight: bold;
     padding: 1rem 0;
+    text-align: center;
+    line-height: 1.7;
 }
 
 .benefits_item_info p{
     font-size: var(--text-sm);
+    text-align: center;
 }
 
+.benefits_item_icon{
+    margin-bottom: 1rem ;
+}
 
+@media (min-width: 768px){
+    .driver-registration__benefits{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+
+}
+
+@media (min-width: 992px){
+        .driver-registration__benefits{
+        margin: 2.5rem;
+    }
+
+        .driver-registration__benefits_item{
+        flex-direction: row;
+    }
+
+    .benefits_item_icon{
+    margin-bottom: 0rem ;
+    }
+
+    .benefits_item_info h4{
+        text-align: right;
+    }
+
+    .benefits_item_info p{
+        text-align: right;
+    }
+
+    .driver-registration{
+    padding: 4rem;
+    }
+
+}
 
 /*
 * Footer
@@ -518,6 +708,18 @@ button{
 
 .footer .footer-links{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links li:first-child{
+    margin-right: 1rem;
+}
+
+.footer-links li{
+    margin: 1rem 0 ;
+    margin-left: 1rem;
+
 }
 
 .footer .footer-links li a{
@@ -552,11 +754,11 @@ button{
 */
 
 .snapp-slider-section{
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 .snapp-slider-wrapper{
-    padding: 0 7rem;
+    padding: 0 1rem;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
@@ -567,8 +769,8 @@ button{
 }
 
 #snapp-slider .keen-slider__slide{
-    width: 25rem;
-    height: 100%;
+    height: 7rem;
+    width: 100%;
 }
 
 #snapp-slider .keen-slider__slide img{
@@ -608,4 +810,26 @@ button{
 
 .keen-dots-wrapper .keen_dots .dot.active{
    background-color: white;
+}
+
+@media (min-width: 768px) {
+    #snapp-slider .keen-slider__slide{
+        height: 17rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .snapp-slider-section{
+        margin: 5rem 0;
+    }
+
+    .snapp-slider-wrapper{
+        padding: 0 7rem;
+    }
+
+    #snapp-slider .keen-slider__slide{
+        height: 25rem;
+    }
 }
